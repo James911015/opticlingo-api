@@ -33,5 +33,4 @@ public class Concept {
     @Column(name = "is_active", nullable = false)
     private Boolean isActive;
 
-    // Add relationships or additional fields as needed
 }

@@ -13,17 +13,13 @@ import lombok.NoArgsConstructor;
 public class Languaje {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(nullable = false, unique = true)
-    private String name;
-
-    @Column(length = 10)
+    @Column(name = "code", nullable = false, length = 10)
     private String code; // e.g., "en", "es", "fr"
 
-    @Column(length = 1000)
-    private String description;
+    @Column(name = "name", nullable = false, unique = true, length = 50)
+    private String name;
 
-    // Add relationships or additional fields as needed
+    @Column(name = "flag_icon")
+    private String flagIcon;
+
 }
