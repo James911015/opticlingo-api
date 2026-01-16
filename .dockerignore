@@ -1,0 +1,30 @@
+# Archivos de Git
+.git
+.gitignore
+.gitattributes
+.github
+
+# Archivos de build locales
+build/
+.gradle/
+bin/
+out/
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Documentación
+*.md
+!README.md
+
+# Archivos de configuración local
+*.log
+*.tmp
