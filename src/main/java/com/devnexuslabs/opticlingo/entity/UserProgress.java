@@ -6,6 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -13,6 +14,7 @@ import lombok.ToString;
 @Data // Genera Getters, Setters, toString, equals, hashCode
 @NoArgsConstructor // Constructor vacío (Obligatorio para JPA)
 @AllArgsConstructor // Constructor con todos los campos
+@Builder
 @Entity
 @Table(name = "user_progress", schema = "core", uniqueConstraints = {
         // Mapeamos la restricción única de la base de datos (Usuario + Concepto +
@@ -40,13 +42,16 @@ public class UserProgress {
 
     // Sistema Leitner (Cajas 1 a 5)
     @Column(name = "box_level", nullable = false)
+    @Builder.Default
     private Integer boxLevel = 1;
 
     @CreationTimestamp
     @Column(name = "last_reviewed_at")
+    @Builder.Default
     private LocalDateTime lastReviewedAt = LocalDateTime.now();
 
     @CreationTimestamp
     @Column(name = "next_review_at")
+    @Builder.Default
     private LocalDateTime nextReviewAt = LocalDateTime.now();
 }
